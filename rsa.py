@@ -7,9 +7,10 @@ class RSA:
 		self.d = 0
 		self.phi_n = 0
 
-	def setne(self,n,e):
+	def setne(self,n,e,d):
 		self.n = n
 		self.e = e
+		self.d = d
 
 	def setpqe(self,p,q,e):
 		self.e = e
