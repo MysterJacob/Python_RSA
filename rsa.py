@@ -36,3 +36,19 @@ class RSA:
 
 	def getpublickey(self):
 		return (self.e,self.n)
+
+	def encryptblock(self,m : int ,block_size : int = 8):
+		mask = 2 ** block_size - 1
+		offset = 0
+		c = []
+		while True:
+			b = (m >> offset) & mask
+			if b == 0:
+				break
+			c.append(self.encrypt(b))
+			offset += block_size
+
+		return c
+	
+	def decryptblock(self,m : list):
+		return [self.decrypt(c) for c in m]
