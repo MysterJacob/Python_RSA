@@ -3,8 +3,8 @@ from rsa import RSA
 
 def main():
 	rsa = RSA()
-	success = rsa.setpqe(191,197,13)
-	m = 0x4a616b20746f207769647a69737a20746f207a6e61637a79207a6520647a69616c61206a616b206e616c657a792e
+	success = rsa.setpqe(719,727,41)
+	m = 0x54686520717569636b2062726f776e20666f78206a756d7073206f76657220746865206c617a7920646f67
 
 	c = rsa.encryptblock(m)
 	m = rsa.decryptblock(c)
